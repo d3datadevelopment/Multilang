@@ -2,7 +2,6 @@
   "name": "d3/multilang",
   "description": "Text item handler module for OXID eShop.",
   "type": "oxideshop-module",
-  "version": "4.0.0.0",
   "keywords": [
     "oxid",
     "modules",
