@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<OX>
+    <OXMENU id="d3mxd3modules">
+        <MAINMENU id="d3mxmultilang">
+            <SUBMENU id="d3mxmultilang_settings" cl="d3_cfg_multilang" list="d3_cfg_multilang_list">
+                <TAB id="d3tbclmultilang_imex" cl="d3_cfg_multilang_imex" />
+                <TAB id="d3tbclmultilang_translations" cl="d3_cfg_multilang_main" />
+                <TAB id="d3tbcl_licence" cl="d3_cfg_multilang_licence" />
+            </SUBMENU>
+        </MAINMENU>
+    </OXMENU>
+</OX>

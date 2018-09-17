@@ -1,0 +1,44 @@
+{
+  "name": "d3/multilang",
+  "description": "Text item handler module for OXID eShop.",
+  "type": "oxideshop-module",
+  "version": "4.0.0.0",
+  "keywords": [
+    "oxid",
+    "modules",
+    "eShop",
+    "d3",
+    "test items"
+  ],
+  "authors": [
+    {
+        "name": "D3 Data Development (Inh. Thomas Dartsch)",
+        "email": "info@shopmodule.com",
+        "homepage": "http://www.d3data.de",
+        "role": "Owner"
+    }
+  ],
+  "support": {
+    "email": "support@shopmodule.com"
+  },
+  "homepage": "https://www.oxidmodule.com/",
+  "license": [
+    "proprietary"
+  ],
+  "extra": {
+    "oxideshop": {
+      "source-directory": "/src",
+      "target-directory": "d3/multilang"
+    }
+  },
+  "require": {
+    "php": "7.1 - 7.2", "ext-ionCube-Loader": "*",
+    "oxid-esales/oxideshop-metapackage-ce": "~6.0.2 || ~6.1.0",
+    "d3/modcfg": ">=5.1.1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "D3\\Multilang\\": "../../../source/modules/d3/multilang"
+    }
+  }
+}
