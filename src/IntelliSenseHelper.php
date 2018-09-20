@@ -21,7 +21,7 @@ namespace D3\Multilang\Modules\Application\Controller\Admin
 
     class d3_sysreq_main_multilang_parent extends \OxidEsales\Eshop\Application\Controller\Admin\SystemRequirementsMain {}
 
-    class d3cleartmp_multilang_parent extends \D3\ModCfg\Application\Controller\Admin\Maintenance\d3ClearTmp {}
+    class d3cleartmp_multilang_parent extends \D3\ModCfg\Application\Controller\Admin\Maintenance\d3cleartmp {}
 }
 
 namespace D3\Multilang\Modules\Application\Model\Maintenance
