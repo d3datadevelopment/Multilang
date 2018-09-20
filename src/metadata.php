@@ -13,7 +13,7 @@
  * @link      http://www.oxidmodule.com
  */
 
-use D3\ModCfg\Application\Controller\Admin\Maintenance\d3ClearTmp;
+use D3\ModCfg\Application\Controller\Admin\Maintenance\d3cleartmp;
 use D3\ModCfg\Application\Model\d3utils;
 use D3\ModCfg\Application\Model\Maintenance\d3clrtmp;
 use OxidEsales\Eshop\Application\Controller\Admin\SystemRequirementsMain;
@@ -41,7 +41,7 @@ $aModule = array(
     'url'         => 'http://www.oxidmodule.com/',
     'extend'      => array(
         Language::class     => D3\Multilang\Modules\Core\d3_oxlang_multilang::class,
-        d3ClearTmp::class   => D3\Multilang\Modules\Application\Controller\Admin\d3cleartmp_multilang::class,
+        d3cleartmp::class   => D3\Multilang\Modules\Application\Controller\Admin\d3cleartmp_multilang::class,
         d3clrtmp::class     => D3\Multilang\Modules\Application\Model\Maintenance\d3clrtmp_multilang::class,
         SystemRequirementsMain::class    => D3\Multilang\Modules\Application\Controller\Admin\d3_sysreq_main_multilang::class,
     ),

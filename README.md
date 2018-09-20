@@ -1,4 +1,4 @@
-# D³ Übersetzungsassitent für OXID eShop
+# D³ Übersetzungsassistent für OXID eShop
 flexible Textbausteinverwaltung direkt im Adminbereich des Shops
 
 ## Systemanforderungen:
