@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * This Software is the property of Data Development and is protected
+ * by copyright law - it is NOT Freeware.
+ * Any unauthorized use of this software without a valid license
+ * is a violation of the license agreement and will be prosecuted by
+ * civil and criminal law.
+ * http://www.shopmodule.com
+ *
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author    D3 Data Development - Daniel Seifert <support@shopmodule.com>
+ * @link      http://www.oxidmodule.com
+ */
+
 namespace D3\Multilang\Modules\Application\Controller\Admin;
 
  use D3\ModCfg\Application\Model\Configuration\d3_cfg_mod;
@@ -10,19 +23,6 @@ namespace D3\Multilang\Modules\Application\Controller\Admin;
  use OxidEsales\Eshop\Core\Exception\StandardException;
  use OxidEsales\Eshop\Core\Registry;
  use OxidEsales\Eshop\Core\UtilsView;
-
- /**
-  * This Software is the property of Data Development and is protected
-  * by copyright law - it is NOT Freeware.
-  * Any unauthorized use of this software without a valid license
-  * is a violation of the license agreement and will be prosecuted by
-  * civil and criminal law.
-  * http://www.shopmodule.com
-  *
-  * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
-  * @author    D3 Data Development - Daniel Seifert <support@shopmodule.com>
-  * @link      http://www.oxidmodule.com
-  */
 
 class d3cleartmp_multilang extends d3cleartmp_multilang_parent
 {

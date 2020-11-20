@@ -4,10 +4,10 @@
 <!--
     function DeleteThis( sID)
     {
-        blCheck = confirm("[{oxmultilang ident="GENERAL_YOUWANTTODELETE"}]");
+        let blCheck = confirm("[{oxmultilang ident="GENERAL_YOUWANTTODELETE"}]");
         if( blCheck === true)
         {
-            var oTransfer = parent.edit.document.getElementById("transfer");
+            let oTransfer = parent.edit.document.getElementById("transfer");
             oTransfer.deloxid.value=sID;
             oTransfer.fnc.value='deleteentry';
             oTransfer.actedit.value=0;
@@ -17,10 +17,9 @@
 
     function popUp(evt,currElem)
     {
-        var popUpWin = document.getElementById(currElem);
-        var y = parseInt(evt.clientY) - 33 - parseInt((17.5*(popUpWin.innerHTML.split(/<br[ 	\/^>]*>/gi).length-1)));
-        var x = parseInt(evt.clientX) - 50;
-
+        let popUpWin = document.getElementById(currElem);
+        let y = parseInt(evt.clientY) - 33 - parseInt((17.5*(popUpWin.innerHTML.split(/<br[ 	\/^>]*>/gi).length-1)));
+        let x = parseInt(evt.clientX) - 50;
 
         if(document.all){
             if ( x > document.body.clientWidth - 150 ){
@@ -42,14 +41,14 @@
 
     function popDown(currElem)
     {
-        var popUpWin = document.getElementById(currElem);
+        let popUpWin = document.getElementById(currElem);
         popUpWin.style.visibility ="hidden"
     }
 
 
     function _groupExp(el)
     {
-        var _cur = el.parentNode;
+        let _cur = el.parentNode;
 
         if (_cur.className === "exp") _cur.className = "";
         else _cur.className = "exp";
@@ -102,12 +101,12 @@
     <input type="hidden" name="sSearchType" value="[{$sSearchType}]">
 </form>
 
-<table border="0" width="98%">
+<table style="border: none; width: 98%">
 
     [{if $langsel_right != 'none' && $langsel_left != 'none'}]
         [{* Suche *}]
         <tr>
-            <td valign="top" class="edittext">
+            <td style="vertical-align: top" class="edittext">
 
                 [{block name="d3_cfg_multilang_main__searchform"}]
                     <form name="searchform" id="searchform" action="[{$oViewConf->getSelfLink()}]" method="post">
@@ -120,13 +119,13 @@
                         <input type="hidden" name="editval[d3_cfg_mod__oxid]" value="[{$oxid}]">
                         <fieldset>
                             <legend>[{oxmultilang ident="D3_MULTILANG_SEARCH"}]</legend>
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table style="width: 100%; border: none; padding: 0; border-spacing: 0; border-collapse: collapse">
                                 <tr>
                                     [{block name="d3_cfg_multilang_main__searchformelements"}]
                                         <td class="edittext ext_edittext" style="width: 200px;">
                                             <label for="sSearchText">[{oxmultilang ident="D3_MULTILANG_SEARCHDESC"}]</label>
                                         </td>
-                                        <td class="edittext ext_edittext" align="left" colspan="2">
+                                        <td class="edittext ext_edittext" style="text-align: left" colspan="2">
                                             <input id="sSearchText" type="text" size="50" name="sSearchText" value="[{$sSearchText}]" class="edittext" style="margin-right: 5px; width: 250px; float: left;" [{$readonly}]>
                                             <span class="d3modcfg_btn icon d3color-blue">
                                                 <button type="submit" name="save" [{$readonly}]>
@@ -170,7 +169,7 @@
                                                                 </button>
                                                             </span>
 
-                                                            <select name="itemtype" size="1">
+                                                            <select name="itemtype" size="1" title="">
                                                                 <option value="all">[{oxmultilang ident="D3_MULTILANG_SEARCHALL"}]</option>
                                                                 <option value="frontend" [{if $sItemtype == 'frontend'}] selected[{/if}]>[{oxmultilang ident="D3_MULTILANG_SEARCHFRONTEND"}]</option>
                                                                 <option value="backend" [{if $sItemtype == 'backend'}] selected[{/if}]>[{oxmultilang ident="D3_MULTILANG_SEARCHBACKEND"}]</option>
@@ -192,7 +191,7 @@
 
     [{* Sprachwahl *}]
     <tr>
-        <td valign="top" class="edittext">
+        <td style="vertical-align: top" class="edittext">
             [{block name="d3_cfg_multilang_main__langselection"}]
                 <form name="langsel" id="langsel" action="[{$oViewConf->getSelfLink()}]" method="post">
                     [{$oViewConf->getHiddenSid()}]
@@ -203,21 +202,25 @@
                     <input type="hidden" name="editval[d3_cfg_mod__oxid]" value="[{$oxid}]">
                     <fieldset>
                         <legend>[{oxmultilang ident="D3_MULTILANG_LANGSELECT"}]</legend>
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <table style="width: 100%; border: none; padding: 0; border-spacing: 0; border-collapse: collapse">
                             <colgroup>
-                                <col width="200">
+                                <col style="width: 200px">
+                                <col style="width: 26px">
                                 <col>
-                                <col width="26">
+                                <col style="width: 26px">
                                 <col>
-                                <col width="26">
-                                <col width="26">
+                                <col style="width: 26px">
+                                <col style="width: 26px">
                             </colgroup>
                             <tr>
                                 <td class="edittext ext_edittext">
                                     &nbsp;
                                 </td>
-                                <td class="edittext ext_edittext" align="left">
-                                    <SELECT class="editinput" name="langsel[left]" size="1" style="width:100%; background-color: #F0F0F0; font-weight: bold; border-width:0;" onchange="document.getElementById('langsel').submit();">
+                                <td class="edittext ext_edittext">
+                                    &nbsp;
+                                </td>
+                                <td class="edittext ext_edittext" style="text-align: left">
+                                    <SELECT class="editinput" name="langsel[left]" size="1" style="width:100%; background-color: #F0F0F0; font-weight: bold; border-width:0;" title="" onchange="document.getElementById('langsel').submit();">
                                         <option value="">[{oxmultilang ident="D3_MULTILANG_SELECTLANGUAGE"}]</OPTION>
                                         <option value="">---------------------------</OPTION>
                                         [{foreach from=$aLanguages item=lang key=key}]
@@ -225,9 +228,9 @@
                                         [{/foreach}]
                                     </SELECT>
                                 </td>
-                                <td class="edittext ext_edittext" align="left">&nbsp;</td>
-                                <td class="edittext ext_edittext" align="left">
-                                    <SELECT class="editinput" name="langsel[right]" size="1" style="width:100%; background-color: #F0F0F0; font-weight: bold; border-width:0;" onchange="document.getElementById('langsel').submit();">
+                                <td class="edittext ext_edittext" style="text-align: left">&nbsp;</td>
+                                <td class="edittext ext_edittext" style="text-align: left">
+                                    <SELECT class="editinput" name="langsel[right]" size="1" style="width:100%; background-color: #F0F0F0; font-weight: bold; border-width:0;" title="" onchange="document.getElementById('langsel').submit();">
                                         <option value="">[{oxmultilang ident="D3_MULTILANG_SELECTLANGUAGE"}]</OPTION>
                                         <option value="">---------------------------</OPTION>
                                         [{foreach from=$aLanguages item=lang key=key}]
@@ -235,8 +238,8 @@
                                         [{/foreach}]
                                     </SELECT>
                                 </td>
-                                <td class="edittext ext_edittext" align="left">&nbsp;</td>
-                                <td class="edittext ext_edittext" align="left">&nbsp;</td>
+                                <td class="edittext ext_edittext" style="text-align: left">&nbsp;</td>
+                                <td class="edittext ext_edittext" style="text-align: left">&nbsp;</td>
                             </tr>
                         </table>
                     </fieldset>
@@ -248,7 +251,7 @@
 
 [{if $langsel_right != 'none' && $langsel_left != 'none'}]
 
-    [{* Neueinträge *}]
+    [{* Neueintraege *}]
     [{block name="d3_cfg_multilang_main__newitems"}]
         <form name="myedit" id="myedit" action="[{$oViewConf->getSelfLink()}]" method="post">
             [{$oViewConf->getHiddenSid()}]
@@ -261,94 +264,108 @@
             <input type="hidden" name="sSearchType" value="[{$sSearchType}]">
             <input type="hidden" name="page" value="[{$iPage}]">
 
-            <table border="0" width="98%" class="itemlist">
+            <table style="border: none; width: 98%" class="itemlist">
                 <tr>
-                    <td class="edittext ext_edittext" valign="top" align="left">
+                    <td class="edittext ext_edittext" style="vertical-align: top; text-align: left">
                         <fieldset>
                             <legend>[{oxmultilang ident="D3_MULTILANG_NEWITEM"}]</legend>
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table style="width: 100%; border: none; padding: 0; border-spacing: 0; border-collapse: collapse">
                                 <colgroup>
-                                    <col width="200">
+                                    <col style="width: 200px">
+                                    <col style="width: 26px">
                                     <col>
-                                    <col width="26">
+                                    <col style="width: 26px">
                                     <col>
-                                    <col width="26">
-                                    <col width="26">
+                                    <col style="width: 26px">
+                                    <col style="width: 26px">
                                 </colgroup>
                                 <tr>
                                     <td class="edittext ext_edittext">
-                                        <input type="text" name="newValues1[key]" class="edittext" value="[{$newValues1.key}]" style="width: 100%;[{if $newValues1.error}] border: 2px solid red;[{/if}]" [{$readonly}]>
+                                        <input type="text" name="newValues1[key]" class="edittext" value="[{$newValues1.key}]" title="" style="width: 100%;[{if $newValues1.error}] border: 2px solid red;[{/if}]" [{$readonly}]>
                                     </td>
-                                    <td class="edittext ext_edittext" align="left">
-                                        <input type="text" size="50" name="newValues1[[{$langsel_left}]]" value="[{$newValues1.$langsel_left}]" class="edittext" style="width: 100%;[{if $newValues1.error}] border: 2px solid red;[{/if}]"[{if $langsel_left == $langsel_right}] disabled[{/if}] [{$readonly}]>
+                                    <td class="edittext ext_edittext" style="text-align: left">
+                                        <input type="hidden" name="newValues1[oxadmin]" value="0">
+                                        <input type="checkbox" value="1" name="newValues1[oxadmin]" class="edittext" style="width: 100%;" title="[{oxmultilang ident="D3_MULTILANG_ISBACKEND"}]" [{$readonly}]>
                                     </td>
-                                    <td class="edittext ext_edittext" align="left">
-                                        <input type="checkbox" value="0" name="newValues1[original_[{$langsel_left}]]" class="edittext" style="width: 100%;" disabled title="Original Oxid" [{$readonly}]>
+                                    <td class="edittext ext_edittext" style="text-align: left">
+                                        <input type="text" size="50" name="newValues1[[{$langsel_left}]]" value="[{$newValues1.$langsel_left}]" title="" class="edittext" style="width: 100%;[{if $newValues1.error}] border: 2px solid red;[{/if}]"[{if $langsel_left == $langsel_right}] disabled[{/if}] [{$readonly}]>
                                     </td>
-                                    <td class="edittext ext_edittext" align="left">
-                                        <input type="text" size="50" name="newValues1[[{$langsel_right}]]" value="[{$newValues1.$langsel_right}]" class="edittext" style="width: 100%;[{if $newValues1.error}] border: 2px solid red;[{/if}]" [{$readonly}]>
+                                    <td class="edittext ext_edittext" style="text-align: left">
+                                        <input type="checkbox" value="0" name="newValues1[original_[{$langsel_left}]]" class="edittext" style="width: 100%;" disabled title="[{oxmultilang ident="D3_MULTILANG_ISORIGINAL"}]" [{$readonly}]>
                                     </td>
-                                    <td class="edittext ext_edittext" align="left">
-                                        <input type="checkbox" value="0" name="newValues1[original_[{$langsel_right}]]" class="edittext" style="width: 100%;" disabled title="Original Oxid" [{$readonly}]>
+                                    <td class="edittext ext_edittext" style="text-align: left">
+                                        <input type="text" size="50" name="newValues1[[{$langsel_right}]]" value="[{$newValues1.$langsel_right}]" title="" class="edittext" style="width: 100%;[{if $newValues1.error}] border: 2px solid red;[{/if}]" [{$readonly}]>
                                     </td>
-                                    <td class="edittext ext_edittext" align="left">&nbsp;</td>
+                                    <td class="edittext ext_edittext" style="text-align: left">
+                                        <input type="checkbox" value="0" name="newValues1[original_[{$langsel_right}]]" class="edittext" style="width: 100%;" disabled title="[{oxmultilang ident="D3_MULTILANG_ISORIGINAL"}]" [{$readonly}]>
+                                    </td>
+                                    <td class="edittext ext_edittext" style="text-align: left">&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td class="edittext ext_edittext">
-                                        <input type="text" name="newValues2[key]" class="edittext" value="[{$newValues2.key}]" style="width: 100%;[{if $newValues2.error}] border: 2px solid red;[{/if}]" [{$readonly}]>
+                                        <input type="text" name="newValues2[key]" class="edittext" value="[{$newValues2.key}]" title="" style="width: 100%;[{if $newValues2.error}] border: 2px solid red;[{/if}]" [{$readonly}]>
                                     </td>
-                                    <td class="edittext ext_edittext" align="left">
-                                        <input type="text" size="50" name="newValues2[[{$langsel_left}]]" value="[{$newValues2.$langsel_left}]" class="edittext" style="width: 100%;[{if $newValues2.error}] border: 2px solid red;[{/if}]"[{if $langsel_left == $langsel_right}] disabled[{/if}] [{$readonly}]>
+                                    <td class="edittext ext_edittext" style="text-align: left">
+                                        <input type="hidden" name="newValues2[oxadmin]" value="0">
+                                        <input type="checkbox" value="1" name="newValues2[oxadmin]" class="edittext" style="width: 100%;" title="[{oxmultilang ident="D3_MULTILANG_ISBACKEND"}]" [{$readonly}]>
                                     </td>
-                                    <td class="edittext ext_edittext" align="left">
-                                        <input type="checkbox" value="0" name="newValues2[original_[{$langsel_left}]]" class="edittext" style="width: 100%;" disabled title="Original Oxid" [{$readonly}]>
+                                    <td class="edittext ext_edittext" style="text-align: left">
+                                        <input type="text" size="50" name="newValues2[[{$langsel_left}]]" value="[{$newValues2.$langsel_left}]" title="" class="edittext" style="width: 100%;[{if $newValues2.error}] border: 2px solid red;[{/if}]"[{if $langsel_left == $langsel_right}] disabled[{/if}] [{$readonly}]>
                                     </td>
-                                    <td class="edittext ext_edittext" align="left">
-                                        <input type="text" size="50" name="newValues2[[{$langsel_right}]]" value="[{$newValues2.$langsel_right}]" class="edittext" style="width: 100%;[{if $newValues2.error}] border: 2px solid red;[{/if}]" [{$readonly}]>
+                                    <td class="edittext ext_edittext" style="text-align: left">
+                                        <input type="checkbox" value="0" name="newValues2[original_[{$langsel_left}]]" class="edittext" style="width: 100%;" disabled title="[{oxmultilang ident="D3_MULTILANG_ISORIGINAL"}]" [{$readonly}]>
                                     </td>
-                                    <td class="edittext ext_edittext" align="left">
-                                        <input type="checkbox" value="0" name="newValues2[original_[{$langsel_right}]]" class="edittext" style="width: 100%;" disabled title="Original Oxid" [{$readonly}]>
+                                    <td class="edittext ext_edittext" style="text-align: left">
+                                        <input type="text" size="50" name="newValues2[[{$langsel_right}]]" value="[{$newValues2.$langsel_right}]" title="" class="edittext" style="width: 100%;[{if $newValues2.error}] border: 2px solid red;[{/if}]" [{$readonly}]>
                                     </td>
-                                    <td class="edittext ext_edittext" align="left">&nbsp;</td>
+                                    <td class="edittext ext_edittext" style="text-align: left">
+                                        <input type="checkbox" value="0" name="newValues2[original_[{$langsel_right}]]" class="edittext" style="width: 100%;" disabled title="[{oxmultilang ident="D3_MULTILANG_ISORIGINAL"}]" [{$readonly}]>
+                                    </td>
+                                    <td class="edittext ext_edittext" style="text-align: left">&nbsp;</td>
                                 </tr>
                             </table>
                         </fieldset>
                     </td>
                 </tr>
 
-                [{* Alteinträge *}]
+                [{* Alteintraege *}]
                 <tr>
-                    <td class="edittext ext_edittext" valign="top" align="left">
+                    <td class="edittext ext_edittext" style="vertical-align: top; text-align: left">
                         <fieldset>
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table style="width: 100%; border: none; padding: 0; border-spacing: 0; border-collapse: collapse">
                                 <colgroup>
-                                    <col width="200">
+                                    <col style="width: 200px">
+                                    <col style="width: 26px">
                                     <col>
-                                    <col width="26">
+                                    <col style="width: 26px">
                                     <col>
-                                    <col width="26">
-                                    <col width="26">
+                                    <col style="width: 26px">
+                                    <col style="width: 26px">
                                 </colgroup>
                                 [{foreach from=$aTranslations item=translation}]
                                     <tr>
                                         <td class="edittext ext_edittext">
-                                            <input type="text" size="50" name="value[[{$translation->key}]][key]" class="edittext" style="width: 100%;" value="[{$translation->key}]" onkeyup="document.getElementById('org_[{$translation->key}]').checked=false;" [{$readonly}]>
+                                            <input type="text" size="50" name="value[[{$translation->key}]@@[{$translation->oxadmin}]][key]" class="edittext" title="" style="width: 100%;" value="[{$translation->key}]" onkeyup="document.getElementById('org_[{$translation->key}]').checked=false;" [{$readonly}]>
                                         </td>
-                                        <td class="edittext ext_edittext" align="left">
-                                            <input type="text" size="50" name="value[[{$translation->key}]][[{$langsel_left}]]" class="edittext" style="width: 100%;" value="[{$translation->left}]" onkeyup="document.getElementById('org_[{$translation->key}]_[{$langsel_left}]').checked=false;" [{if $langsel_left == $langsel_right}] disabled[{/if}] [{$readonly}]>
+                                        <td class="edittext ext_edittext" style="text-align: left">
+                                            <input type="hidden" name="value[[{$translation->key}]@@[{$translation->oxadmin}]][oxadmin]" value="[{if $translation->oxadmin}]1[{else}]0[{/if}]">
+                                            <input type="checkbox" id="oxadmin_[{$translation->key}]_[{$langsel_left}][{if $langsel_left == $langsel_right}]wp[{/if}]" name="value[[{$translation->key}]@@[{$translation->oxadmin}]][oxadmin[{if $langsel_left == $langsel_right}]wp[{/if}]]" class="edittext" value="1" style="width: 100%;" [{if $translation->oxadmin}]checked[{/if}] title="[{oxmultilang ident="D3_MULTILANG_ISBACKEND"}]" disabled [{$readonly}]>
                                         </td>
-                                        <td class="edittext ext_edittext" align="left">
-                                            <input type="hidden" name="value[[{$translation->key}]][original_[{$langsel_left}]]" value="0">
-                                            <input type="checkbox" id="org_[{$translation->key}]_[{$langsel_left}][{if $langsel_left == $langsel_right}]wp[{/if}]" name="value[[{$translation->key}]][original_[{$langsel_left}][{if $langsel_left == $langsel_right}]wp[{/if}]]" class="edittext" value="1" style="width: 100%;" [{if $translation->original_left}]checked[{/if}] title="Original Oxid" [{if $langsel_left == $langsel_right}] disabled[{/if}] [{$readonly}]>
+                                        <td class="edittext ext_edittext" style="text-align: left">
+                                            <input type="text" size="50" name="value[[{$translation->key}]@@[{$translation->oxadmin}]][[{$langsel_left}]]" title="" class="edittext" style="width: 100%;" value="[{$translation->left}]" onkeyup="document.getElementById('org_[{$translation->key}]_[{$langsel_left}]').checked=false;" [{if $langsel_left == $langsel_right}] disabled[{/if}] [{$readonly}]>
                                         </td>
-                                        <td class="edittext ext_edittext" align="left">
-                                            <input type="text" size="50" name="value[[{$translation->key}]][[{$langsel_right}]]" class="edittext" style="width: 100%;" value="[{$translation->right}]" onkeyup="document.getElementById('org_[{$translation->key}]_[{$langsel_right}]').checked=false;" [{$readonly}]>
+                                        <td class="edittext ext_edittext" style="text-align: left">
+                                            <input type="hidden" name="value[[{$translation->key}]@@[{$translation->oxadmin}]][original_[{$langsel_left}]]" value="0">
+                                            <input type="checkbox" id="org_[{$translation->key}]_[{$langsel_left}][{if $langsel_left == $langsel_right}]wp[{/if}]" name="value[[{$translation->key}]@@[{$translation->oxadmin}]][original_[{$langsel_left}][{if $langsel_left == $langsel_right}]wp[{/if}]]" class="edittext" value="1" style="width: 100%;" [{if $translation->original_left}]checked[{/if}] title="[{oxmultilang ident="D3_MULTILANG_ISORIGINAL"}]" [{if $langsel_left == $langsel_right}] disabled[{/if}] [{$readonly}]>
                                         </td>
-                                        <td class="edittext ext_edittext" align="left">
-                                            <input type="hidden" name="value[[{$translation->key}]][original_[{$langsel_right}]]" value="0">
-                                            <input type="checkbox" id="org_[{$translation->key}]_[{$langsel_right}]" name="value[[{$translation->key}]][original_[{$langsel_right}]]" class="edittext" value="1" style="width: 100%;" [{if $translation->original_right}]checked[{/if}] title="Original Oxid" [{$readonly}]>
+                                        <td class="edittext ext_edittext" style="text-align: left">
+                                            <input type="text" size="50" name="value[[{$translation->key}]@@[{$translation->oxadmin}]][[{$langsel_right}]]" title="" class="edittext" style="width: 100%;" value="[{$translation->right}]" onkeyup="document.getElementById('org_[{$translation->key}]_[{$langsel_right}]').checked=false;" [{$readonly}]>
                                         </td>
-                                        <td class="edittext ext_edittext" align="left">
+                                        <td class="edittext ext_edittext" style="text-align: left">
+                                            <input type="hidden" name="value[[{$translation->key}]@@[{$translation->oxadmin}]][original_[{$langsel_right}]]" value="0">
+                                            <input type="checkbox" id="org_[{$translation->key}]_[{$langsel_right}]" name="value[[{$translation->key}]@@[{$translation->oxadmin}]][original_[{$langsel_right}]]" class="edittext" value="1" style="width: 100%;" [{if $translation->original_right}]checked[{/if}] title="[{oxmultilang ident="D3_MULTILANG_ISORIGINAL"}]" [{$readonly}]>
+                                        </td>
+                                        <td class="edittext ext_edittext" style="text-align: left">
                                             <a id="del.2" class="delete" onmouseover="popUp(event,'item_delete');return true" onmouseout="popDown('item_delete')" title="" href="Javascript:DeleteThis('[{$translation->key}]');" [{$readonly}]>
                                         </td>
                                     </tr>
@@ -360,10 +377,10 @@
 
                 [{* Speichern *}]
                 <tr>
-                    <td class="edittext ext_edittext" valign="top" align="left">
-                        <table width="100%">
+                    <td class="edittext ext_edittext" style="text-align: left; vertical-align: top">
+                        <table style="width: 100%">
                             <tr>
-                                <td class="edittext ext_edittext" align="left"><br>
+                                <td class="edittext ext_edittext" style="text-align: left"><br>
                                     <span class="d3modcfg_btn icon d3color-green">
                                         <button type="submit" name="save" [{$readonly}]>
                                             <i class="fa fa-check-circle fa-inverse"></i>
@@ -379,21 +396,21 @@
         </form>
     [{/block}]
 
-    <table border="0" width="98%">
+    <table style="border: none; width: 98%">
         <tr>
-            <td class="edittext ext_edittext" valign="top" align="left">
+            <td class="edittext ext_edittext" style="vertical-align: top; text-align: left">
                 [{include file="d3pagenavigation.tpl"}]
             </td>
         </tr>
     </table>
 [{else}]
     [{* vorher Sprachwahl *}]
-    <table border="0" width="98%">
+    <table style="border: none; width: 98%">
         <tr>
-            <td class="edittext ext_edittext" valign="top" align="left">
-                <table width="100%">
+            <td class="edittext ext_edittext" style="vertical-align: top; text-align: left">
+                <table style="width: 100%">
                     <tr>
-                        <td class="edittext ext_edittext" align="left"><br>
+                        <td class="edittext ext_edittext" style="text-align: left"><br>
                             [{oxmultilang ident="D3_MULTILANG_CHOOSELANGFIRST"}]
                         </td>
                     </tr>
@@ -409,7 +426,7 @@
     [{if $msg == 'success'}]
         <script type="text/javascript">
             if (confirm('[{oxmultilang ident="D3_MULTILANG_CLEARLANGCACHE"}]')) {
-                var oTransfer = parent.edit.document.getElementById("transfer");
+                let oTransfer = parent.edit.document.getElementById("transfer");
                 oTransfer.fnc.value='clearLangCache';
                 oTransfer.submit();
             }

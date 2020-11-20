@@ -1,24 +1,4 @@
-<?php
-
-namespace D3\Multilang\Setup;
-
-use D3\ModCfg\Application\Model\d3database;
-use D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception;
-use D3\ModCfg\Application\Model\Exception\d3ParameterNotFoundException;
-use D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException;
-use D3\ModCfg\Application\Model\Install\d3install_updatebase;
-use D3\ModCfg\Application\Model\Installwizzard\d3installconfirmmessage;
-use D3\ModCfg\Application\Model\Installwizzard\d3installdbcommon;
-use D3\Multilang\Application\Model\d3_translations;
-use Doctrine\DBAL\DBALException;
-use OxidEsales\Eshop\Application\Model\Shop;
-use OxidEsales\Eshop\Core\DatabaseProvider;
-use OxidEsales\Eshop\Core\Exception\ConnectionException;
-use OxidEsales\Eshop\Core\Exception\DatabaseConnectionException;
-use OxidEsales\Eshop\Core\Exception\DatabaseErrorException;
-use OxidEsales\Eshop\Core\Exception\StandardException;
-use OxidEsales\Eshop\Core\Registry;
-use ReflectionException;
+﻿<?php
 
 /**
  * This Software is the property of Data Development and is protected
@@ -35,18 +15,40 @@ use ReflectionException;
  * @link      http://www.oxidmodule.com
  */
 
+namespace D3\Multilang\Setup;
+
+use D3\ModCfg\Application\Model\d3database;
+use D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception;
+use D3\ModCfg\Application\Model\Exception\d3ParameterNotFoundException;
+use D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException;
+use D3\ModCfg\Application\Model\Install\d3install_updatebase;
+use D3\ModCfg\Application\Model\Installwizzard\d3installconfirmmessage;
+use D3\ModCfg\Application\Model\Installwizzard\d3installdbcommon;
+use D3\ModCfg\Application\Model\Installwizzard\d3installdbfield;
+use D3\ModCfg\Application\Model\Installwizzard\d3installdbindizes;
+use D3\Multilang\Application\Model\d3_translations;
+use Doctrine\DBAL\DBALException;
+use OxidEsales\Eshop\Application\Model\Shop;
+use OxidEsales\Eshop\Core\DatabaseProvider;
+use OxidEsales\Eshop\Core\Exception\ConnectionException;
+use OxidEsales\Eshop\Core\Exception\DatabaseConnectionException;
+use OxidEsales\Eshop\Core\Exception\DatabaseErrorException;
+use OxidEsales\Eshop\Core\Exception\StandardException;
+use OxidEsales\Eshop\Core\Registry;
+use ReflectionException;
+
 class d3multilang_update extends d3install_updatebase
 {
     public $sModKey = 'd3_multilang';
-    public $sModName = '�bersetzungsassistent';
-    public $sModVersion = '4.0.0.1';
-    public $sModRevision = '4001';
-    public $sBaseConf = 'b1av2==aGNOa0hIWDFTaGVGdUhSdysxSjB6SVowWUdyWFhWMGFXS2NpYktnKzlkN2ZnNG03MndET2RuW
-nNPVnFudmFUU2d1WnNTV1hCNk5odUg5S1FXdnZIS3IvWTgvVnpOZVhmSzcyZW1JMHVJa0JJNkZEbjJCT
-EY1RmEzaG5TUGNiSkRCTVVVK2kya2d5SDl4aTQ4R28waHlxUFBPVzhkQnM4Y0k3alZtYTVaTlFlYXVFV
-0NxSGI5a2pnRTdzc2NFMEF2T3pSOW9zbG5EV01TLzU3UGEvZGRRcEZLeXNhNDMvQVV4YnVpN1c2czFad
-VRmcHU5c3htT2lJRVhIVGxrK1RJOUczdEwzZjJNSnJGQ21iamhaR2w5QU9UemdKQUVxcU5CQWhCMnFyL
-09ybjB5cWp0MTM5VUQ1K05rVmVGNkE5UUdQa3RKcXpyNkpEbWNuMGdCWDVZSG9nPT0=';
+    public $sModName = 'Übersetzungsassistent';
+    public $sModVersion = '4.1.0.0';
+    public $sModRevision = '4100';
+    public $sBaseConf = 'VZhv2==UHJ6ejdSZFRRTWlGVUZFVHBSWEI0QmFMaDFUTWNnd2o4RmdpWnl1V2h4aEJjVWorT1dmNnVIO
+U5BMDU5ZWVNK2xucDdmbjNjN3ZIRlFGS0IwOUJqL29Nd2VFK1hsVHl5ajlQNVpKRHppKzEwVlpDcEptZ
+XdHaGlIQ0xmOWFhUWc2Sm12QWR2NXdoL0ZDcTVlNHhRM3dHMFNHNFJyK3VRSXVJOHlEU3p2cEpnY2hSS
+DlWSkxhWXNwbHVNMWFvQ1JIekxGSkl1R29iekZ2MkFTeThSdEFlSW1zQXFXQk5wdFpWZHF3OVVtaWJaV
+3Bpb21BQitzRmJPZzZaTzA4allYczZEZkdIM0lZT243QkpxZ2Q3ZVhJSmtCYi9GY1pRTFF6bDArc0pIR
+ndRK1haazRQdzFtbml1cVBJSTEwRklZVnZGbEJiNjF5WHN5b3FzalZ3bXIvNDRBPT0=';
     public $sRequirements = '';
     public $sBaseValue = 'TyUzQTglM0ElMjJzdGRDbGFzcyUyMiUzQTQlM0ElN0JzJTNBMjglM0ElMjJkM19jZmdfbW9kX19hTGljZW5zZUluZm9NYWlsJTIyJTNCYSUzQTIlM0ElN0JzJTNBNDglM0ElMjJVTktOT1dOQ09ORktFWV9fNDc5MzYzODcwMmI2NzcxNWYxZGZiZmM4MzI0NjY5MTQlMjIlM0JzJTNBMTklM0ElMjIyMDEzLTEwLTE3JTIwMDklM0EzOSUzQTUyJTIyJTNCcyUzQTQyJTNBJTIyTk9MSUNLRVlfXzQ3OTM2Mzg3MDJiNjc3MTVmMWRmYmZjODMyNDY2OTE0JTIyJTNCcyUzQTE5JTNBJTIyMjAxMy0xMC0xNyUyMDA5JTNBNDElM0EyNyUyMiUzQiU3RHMlM0EzOCUzQSUyMmQzX2NmZ19tb2RfX2JsTXVsdGlsYW5nX091dHB1dE1pbWVUeXBlJTIyJTNCcyUzQTElM0ElMjIxJTIyJTNCcyUzQTMyJTNBJTIyZDNfY2ZnX21vZF9fc011bHRpbGFuZ19TZXBhcmF0b3IlMjIlM0JzJTNBMSUzQSUyMiU3QyUyMiUzQnMlM0E0MCUzQSUyMmQzX2NmZ19tb2RfX2JsTXVsdGlsYW5nX1NhdmVNaXNzaW5nSXRlbXMlMjIlM0JzJTNBMSUzQSUyMjElMjIlM0IlN0Q=';
 
@@ -59,6 +61,8 @@ VRmcHU5c3htT2lJRVhIVGxrK1RJOUczdEwzZjJNSnJGQ21iamhaR2w5QU9UemdKQUVxcU5CQWhCMnFyL
               'do'    => 'fixDeleteFields'),
         array('check' => 'checkTranslationTableExist',
               'do'    => 'updateTranslationTableExist'),
+        array('check' => 'checkOxidField',
+              'do'    => 'fixOxidField'),
         array('check' => 'checkFields',
               'do'    => 'fixFields'),
         array('check' => 'checkIdentCollation',
@@ -79,6 +83,16 @@ VRmcHU5c3htT2lJRVhIVGxrK1RJOUczdEwzZjJNSnJGQ21iamhaR2w5QU9UemdKQUVxcU5CQWhCMnFyL
         'OXID'        => array(
             'sTableName'  => 'd3_translations',
             'sFieldName'  => 'OXID',
+            'sType'       => 'CHAR(32)',
+            'blNull'      => false,
+            'sDefault'    => false,
+            'sComment'    => '',
+            'sExtra'      => '',
+            'blMultilang' => false,
+        ),
+        'OXIDENT'        => array(
+            'sTableName'  => 'd3_translations',
+            'sFieldName'  => 'OXIDENT',
             'sType'       => 'VARCHAR(100)',
             'blNull'      => false,
             'sDefault'    => false,
@@ -133,21 +147,22 @@ VRmcHU5c3htT2lJRVhIVGxrK1RJOUczdEwzZjJNSnJGQ21iamhaR2w5QU9UemdKQUVxcU5CQWhCMnFyL
         'OXID' => array(
             'sTableName' => 'd3_translations',
             'sType'      => d3database::INDEX_TYPE_PRIMARY,
-            'sName'      => 'OXID',
             'aFields'    => array(
-                'OXID'   => 'OXID',
+                'OXID'   => 'OXID'
+            ),
+        ),
+        'ADMINIDENT' => array(
+            'sTableName' => 'd3_translations',
+            'sType'      => d3database::INDEX_TYPE_UNIQUE,
+            'sName'      => 'ADMINIDENT',
+            'aFields'    => array(
+                'OXIDENT'   => 'OXIDENT',
                 'OXADMIN'   => 'OXADMIN',
             ),
         ),
     );
 
     public $aRenameFields = array(
-        'OXID'        => array(
-           'sTableName'  => 'd3_translations',
-           'mOldFieldNames' => array('oxident', 'OXIDENT'), // is case sensitive
-           'sFieldName'  => 'OXID',
-           'blMultilang' => false,
-        ),
         'OXTEXT_0'        => array(
            'sTableName'  => 'd3_translations',
            'mOldFieldNames' => array('oxtext', 'oxtext_0'), // is case sensitive
@@ -208,6 +223,69 @@ VRmcHU5c3htT2lJRVhIVGxrK1RJOUczdEwzZjJNSnJGQ21iamhaR2w5QU9UemdKQUVxcU5CQWhCMnFyL
     }
 
     /**
+     * true, if OXIDENT doesn't exist
+     * @return bool
+     * @throws DatabaseConnectionException
+     * @throws DatabaseErrorException
+     */
+    public function checkOxidField()
+    {
+        $dbField = oxNew(d3installdbfield::class, $this);
+        return $dbField->checkTableFieldNotExist('d3_translations', 'OXIDENT');
+    }
+
+    /**
+     * @return bool
+     * @throws DatabaseConnectionException
+     * @throws DatabaseErrorException
+     */
+    public function fixOxidField()
+    {
+        $tableName = oxNew(d3_translations::class)->getCoreTableName();
+        $ret = true;
+
+        if ($this->checkOxidField()) {
+            $dbIndex = oxNew(d3installdbindizes::class, $this);
+            $dbIndex->dropTableIndex($tableName, 'PRIMARY');
+            $dbIndex->addTableIndex2([
+                'sTableName' => $tableName,
+                'sType'      => d3database::INDEX_TYPE_UNIQUE,
+                'sName'      => 'ADMINIDENT',
+                'aFields'    => [
+                    'OXID'   => 'OXID',
+                    'OXADMIN'   => 'OXADMIN'
+                ]
+            ]);
+
+            $dbField = oxNew(d3installdbfield::class, $this);
+            $dbField->fixRenameField2($tableName, 'OXID', 'OXIDENT');
+            $dbField->addTableField2($tableName, 'OXID', 'CHAR(32)', '', FALSE);
+
+            $queries = [
+                "UPDATE $tableName SET OXID = MD5(CONCAT(OXIDENT, '-', OXADMIN)) WHERE 1;",
+            ];
+
+            $dbCommon = oxNew(d3installdbcommon::class, $this);
+            $dbCommon->executeMultipleQueries($queries);
+
+            $dbIndex->addTableIndex2([
+                'sTableName' => $tableName,
+                'sType'      => d3database::INDEX_TYPE_PRIMARY,
+                'aFields'    => [
+                    'OXID'   => 'OXID'
+                ]
+            ]);
+
+            if ($this->hasExecute()) {
+                $this->setRequiredViewUpdate('d3_translations');
+                d3database::getInstance()->resetFieldCache();
+            }
+        }
+
+        return $ret;
+    }
+
+    /**
      * @return bool
      * @throws DatabaseConnectionException
      * @throws d3ParameterNotFoundException
@@ -229,7 +307,7 @@ VRmcHU5c3htT2lJRVhIVGxrK1RJOUczdEwzZjJNSnJGQ21iamhaR2w5QU9UemdKQUVxcU5CQWhCMnFyL
      */
     public function fixIdentCollation()
     {
-        $sFieldIdent = 'OXID';
+        $sFieldIdent = 'OXIDENT';
         $sFieldCollation = $this->_getIdentCollation();
 
         $sGeneralPattern = '@(.*)_ci@';
@@ -324,7 +402,7 @@ VRmcHU5c3htT2lJRVhIVGxrK1RJOUczdEwzZjJNSnJGQ21iamhaR2w5QU9UemdKQUVxcU5CQWhCMnFyL
             'where t.TABLE_SCHEMA = "' . $myConfig->getConfigParam('dbName') . '" ' .
             'and t.TABLE_NAME = "d3_translations" ' .
             'and c.TABLE_SCHEMA = "' . $myConfig->getConfigParam('dbName') . '" ' .
-            'and c.COLUMN_NAME = "OXID" ' .
+            'and c.COLUMN_NAME = "OXIDENT" ' .
             ' LIMIT 1';
 
         $sCollation = DatabaseProvider::getDb(DatabaseProvider::FETCH_MODE_ASSOC)->getOne($sSelect);

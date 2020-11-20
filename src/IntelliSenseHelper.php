@@ -17,21 +17,30 @@
 
 namespace D3\Multilang\Modules\Application\Controller\Admin
 {
-    class d3_navigation_multilang_parent extends \OxidEsales\Eshop\Application\Controller\Admin\NavigationController {}
+    use D3\ModCfg\Application\Controller\Admin\Maintenance\d3cleartmp;
+    use OxidEsales\Eshop\Application\Controller\Admin\NavigationController;
+    use OxidEsales\Eshop\Application\Controller\Admin\SystemRequirementsMain;
 
-    class d3_sysreq_main_multilang_parent extends \OxidEsales\Eshop\Application\Controller\Admin\SystemRequirementsMain {}
+    class d3_navigation_multilang_parent extends NavigationController {}
 
-    class d3cleartmp_multilang_parent extends \D3\ModCfg\Application\Controller\Admin\Maintenance\d3cleartmp {}
+    class d3_sysreq_main_multilang_parent extends SystemRequirementsMain {}
+
+    class d3cleartmp_multilang_parent extends d3cleartmp {}
 }
 
 namespace D3\Multilang\Modules\Application\Model\Maintenance
 {
-    class d3clrtmp_multilang_parent extends \D3\ModCfg\Application\Model\Maintenance\d3clrtmp {}
+    use D3\ModCfg\Application\Model\Maintenance\d3clrtmp;
+
+    class d3clrtmp_multilang_parent extends d3clrtmp {}
 }
 
 namespace D3\Multilang\Modules\Core
 {
-    class d3_oxlang_multilang_parent extends \OxidEsales\Eshop\Core\Language {}
+    use OxidEsales\Eshop\Core\Language;
+    use OxidEsales\Eshop\Core\SystemRequirements;
 
-    class d3_oxsysrequirements_multilang_parent extends \OxidEsales\Eshop\Core\SystemRequirements {}
+    class d3_oxlang_multilang_parent extends Language {}
+
+    class d3_oxsysrequirements_multilang_parent extends SystemRequirements {}
 }

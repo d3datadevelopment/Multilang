@@ -1,7 +1,7 @@
 [{$smarty.block.parent}]
 
 <tr>
-    <td class="edittext" valign="top">
+    <td class="edittext" style="vertical-align: top">
         <label for="importmultilang">[{oxmultilang ident="D3_MULTILANG_CLEARTMP_IMPORT"}]</label>
     </td>
     <td class="edittext" style="vertical-align: top;">

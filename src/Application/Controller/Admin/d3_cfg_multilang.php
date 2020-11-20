@@ -1,9 +1,5 @@
 <?php
 
-namespace D3\Multilang\Application\Controller\Admin;
-
-use D3\ModCfg\Application\Controller\Admin\d3_cfg_mod_;
-
 /**
  * This Software is the property of Data Development and is protected
  * by copyright law - it is NOT Freeware.
@@ -16,6 +12,10 @@ use D3\ModCfg\Application\Controller\Admin\d3_cfg_mod_;
  * @author    D3 Data Development - Daniel Seifert <support@shopmodule.com>
  * @link      http://www.oxidmodule.com
  */
+
+namespace D3\Multilang\Application\Controller\Admin;
+
+use D3\ModCfg\Application\Controller\Admin\d3_cfg_mod_;
 
 class d3_cfg_multilang extends d3_cfg_mod_
 {

@@ -8,7 +8,7 @@
 
     function UpdateList( sID)
     {
-        var oSearch = parent.list.document.getElementById("search");
+        let oSearch = parent.list.document.getElementById("search");
         oSearch.oxid.value=sID;
         oSearch.fnc.value='';
         oSearch.submit();
@@ -16,12 +16,12 @@
 
     function EditThis( sID)
     {
-        var oTransfer = document.getElementById("transfer");
+        let oTransfer = document.getElementById("transfer");
         oTransfer.oxid.value=sID;
         oTransfer.cl.value='';
         oTransfer.submit();
 
-        var oSearch = parent.list.document.getElementById("search");
+        let oSearch = parent.list.document.getElementById("search");
         oSearch.actedit.value = 0;
         oSearch.oxid.value=sID;
         oSearch.submit();
@@ -29,9 +29,9 @@
 
     function _groupExp(el)
     {
-        var _cur = el.parentNode;
+        let _cur = el.parentNode;
 
-        if (_cur.className == "exp") _cur.className = "";
+        if (_cur.className === "exp") _cur.className = "";
           else _cur.className = "exp";
     }
 -->
@@ -87,7 +87,7 @@
     <input type="hidden" name="editlanguage" value="[{$editlanguage}]">
 </form>
 
-<table border="0" style="width: 98%;">
+<table style="width: 98%; border: none">
     <tr>
         <td style="vertical-align: top;" class="edittext">
 
@@ -198,7 +198,7 @@
                 [{if $oView->getValueStatus() != 'error'}]
                     <fieldset>
                         <legend>[{oxmultilang ident="D3_MULTILANG_EXPORT"}]</legend>
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <table style="width: 100%; border: none; padding: 0; border-spacing: 0; border-collapse: collapse">
                             <tr>
                                 <td class="edittext ext_edittext">
                                     <form name="export" id="export" action="[{$oViewConf->getSelfLink()}]" method="post">
@@ -235,9 +235,9 @@
                     <fieldset>
                         <legend>[{oxmultilang ident="D3_MULTILANG_IMPORT"}]</legend>
 
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <table style="width: 100%; border: none; padding: 0; border-spacing: 0; border-collapse: collapse">
                             <colgroup>
-                                <col width="30%">
+                                <col style="width: 30%">
                             </colgroup>
 
                             [{block name="d3_cfg_multilang_imex__importinstalled"}]
@@ -303,7 +303,7 @@
                                                 <input type="hidden" name="original_csv" value="0">
                                                 <input type="checkbox" id="original_csv" name="original_csv" value="1" [{if $oView->getRequParam('original_csv') == "1"}]checked[{/if}] [{$readonly}]> <label for="original_csv">[{oxmultilang ident="D3_MULTILANG_SETORIGINAL"}]</label><br>
                                                 <input type="hidden" name="ignore_mime" value="0">
-                                                <input type="checkbox" id="ignore_mime" name="ignore_mime" value="1" [{if $oView->getRequParam('ignore_mime') == "1"}]checked[{/if}] [{$readonly}]> <label for="ignore_mime">[{oxmultilang ident="D3_MULTILANG_IGNOREMIME"}] [{oxinputhelp ident="D3_MULTILANG_IGNOREMIME_DESC"}]</label>
+                                                <input type="checkbox" id="ignore_mime_csv" name="ignore_mime" value="1" [{if $oView->getRequParam('ignore_mime') == "1"}]checked[{/if}] [{$readonly}]> <label for="ignore_mime_csv">[{oxmultilang ident="D3_MULTILANG_IGNOREMIME"}] [{oxinputhelp ident="D3_MULTILANG_IGNOREMIME_DESC"}]</label>
                                             </div>
                                         </form>
                                     </td>
@@ -357,7 +357,7 @@
                                                 <input type="hidden" name="admin_oxid" value="0">
                                                 <input type="checkbox" id="admin_oxid" name="admin_oxid" value="1" [{if $oView->getRequParam('admin_oxid') == "1"}]checked[{/if}] [{$readonly}]> <label for="admin_oxid">[{oxmultilang ident="D3_MULTILANG_ISADMIN"}]</label><br>
                                                 <input type="hidden" name="ignore_mime" value="0">
-                                                <input type="checkbox" id="ignore_mime" name="ignore_mime" value="1" [{if $oView->getRequParam('ignore_mime') == "1"}]checked[{/if}] [{$readonly}]> <label for="ignore_mime">[{oxmultilang ident="D3_MULTILANG_IGNOREMIME"}] [{oxinputhelp ident="D3_MULTILANG_IGNOREMIME_DESC"}]</label>
+                                                <input type="checkbox" id="ignore_mime_oxid" name="ignore_mime" value="1" [{if $oView->getRequParam('ignore_mime') == "1"}]checked[{/if}] [{$readonly}]> <label for="ignore_mime_oxid">[{oxmultilang ident="D3_MULTILANG_IGNOREMIME"}] [{oxinputhelp ident="D3_MULTILANG_IGNOREMIME_DESC"}]</label>
                                             </div>
                                         </form>
                                     </td>
@@ -378,7 +378,7 @@
     [{if $clrTmp}]
         <script type="text/javascript">
             if (confirm('[{oxmultilang ident="D3_MULTILANG_CLEARLANGCACHE"}]')) {
-                var oTransfer = parent.edit.document.getElementById("transfer");
+                let oTransfer = parent.edit.document.getElementById("transfer");
                 oTransfer.fnc.value='clearLangCache';
                 oTransfer.submit();
             }
