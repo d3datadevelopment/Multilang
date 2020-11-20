@@ -1,10 +1,10 @@
 {
     "title": "<i class='fab fa-d3 d3fa-color-blue'></i> Übersetzungsassistent",
-    "moduleversion": "4.0.0.1",
+    "moduleversion": "4.1.0.0",
     "titledesc": "für den Oxid eShop",
     "author": "D³ Data Development",
-    "moduledate": "17.05.2019",
-    "editors": "DS",
+    "moduledate": "20.11.2020",
+    "editors": "",
     "tagline": "",
     "image": "",
     "ignore": {

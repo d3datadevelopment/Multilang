@@ -1,7 +1,5 @@
 <?php
 
-namespace D3\Multilang\Modules\Application\Controller\Admin;
-
 /**
  * This Software is the property of Data Development and is protected
  * by copyright law - it is NOT Freeware.
@@ -14,6 +12,8 @@ namespace D3\Multilang\Modules\Application\Controller\Admin;
  * @author    D3 Data Development - Daniel Seifert <support@shopmodule.com>
  * @link      http://www.oxidmodule.com
  */
+
+namespace D3\Multilang\Modules\Application\Controller\Admin;
 
 class d3_sysreq_main_multilang extends d3_sysreq_main_multilang_parent
 {

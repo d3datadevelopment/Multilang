@@ -1,10 +1,5 @@
 <?php
 
-namespace D3\Multilang\Application\Controller\Admin;
-
-use D3\ModCfg\Application\Controller\Admin\d3_cfg_mod_licence;
-use D3\ModCfg\Application\Model\Log\d3log;
-
 /**
  * This Software is the property of Data Development and is protected
  * by copyright law - it is NOT Freeware.
@@ -17,6 +12,11 @@ use D3\ModCfg\Application\Model\Log\d3log;
  * @author    D3 Data Development - Daniel Seifert <support@shopmodule.com>
  * @link      http://www.oxidmodule.com
  */
+
+namespace D3\Multilang\Application\Controller\Admin;
+
+use D3\ModCfg\Application\Controller\Admin\d3_cfg_mod_licence;
+use D3\ModCfg\Application\Model\Log\d3log;
 
 class d3_cfg_multilang_licence extends d3_cfg_mod_licence
 {

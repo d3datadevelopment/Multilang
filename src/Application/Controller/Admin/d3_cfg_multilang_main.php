@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * This Software is the property of Data Development and is protected
+ * by copyright law - it is NOT Freeware.
+ * Any unauthorized use of this software without a valid license
+ * is a violation of the license agreement and will be prosecuted by
+ * civil and criminal law.
+ * http://www.shopmodule.com
+ *
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author    D3 Data Development - Daniel Seifert <support@shopmodule.com>
+ * @link      http://www.oxidmodule.com
+ */
+
 namespace D3\Multilang\Application\Controller\Admin;
 
 use D3\ModCfg\Application\Controller\Admin\d3_cfg_mod_main;
@@ -16,19 +29,6 @@ use OxidEsales\Eshop\Core\Exception\StandardException;
 use OxidEsales\Eshop\Core\Registry;
 use OxidEsales\Eshop\Core\UtilsView;
 use stdClass;
-
-/**
- * This Software is the property of Data Development and is protected
- * by copyright law - it is NOT Freeware.
- * Any unauthorized use of this software without a valid license
- * is a violation of the license agreement and will be prosecuted by
- * civil and criminal law.
- * http://www.shopmodule.com
- *
- * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
- * @author    D3 Data Development - Daniel Seifert <support@shopmodule.com>
- * @link      http://www.oxidmodule.com
- */
 
 class d3_cfg_multilang_main extends d3_cfg_mod_main
 {
@@ -61,9 +61,9 @@ class d3_cfg_multilang_main extends d3_cfg_mod_main
     {
         $sRet = parent::render();
 
-        $this->addTplParam('readonly', !$this->d3getSet()->isActive());
+        $this->addTplParam('readonly', !$this->d3GetSet()->isActive());
 
-        DatabaseProvider::getDb()->Execute("SET NAMES 'utf8'");
+        DatabaseProvider::getDb()->execute("SET NAMES 'utf8'");
 
         /** @var d3_translations $oTranslation */
         $oTranslation = oxNew(d3_translations::class);
@@ -126,7 +126,7 @@ class d3_cfg_multilang_main extends d3_cfg_mod_main
 
         $this->addTplParam('d3pagenavi', $this->_oPageNavigation);
         $this->addTplParam('iPage', $this->_oPageNavigation->getCurrentPage());
-        $this->addTplParam('aLanguages', Registry::getLang()->getlanguageArray());
+        $this->addTplParam('aLanguages', Registry::getLang()->getLanguageArray());
 
         if ($iLangOk == 2) {
             $aTranslList = $oTranslation->getTranslationArray(
@@ -142,11 +142,12 @@ class d3_cfg_multilang_main extends d3_cfg_mod_main
             if (is_array($aTranslList[$this->iLangsel_left]) && count($aTranslList[$this->iLangsel_left])) {
                 foreach ($aTranslList[$this->iLangsel_left] as $sIdent => $sTranslation) {
                     $oTranslation = new stdClass;
-                    $oTranslation->key = $aTranslList['OXID'][$sIdent];
+                    $oTranslation->key = $aTranslList['OXIDENT'][$sIdent];
                     $oTranslation->left = htmlentities($sTranslation, ENT_COMPAT, 'UTF-8');
                     $oTranslation->right = htmlentities($aTranslList[$this->iLangsel_right][$sIdent], ENT_COMPAT, 'UTF-8');
                     $oTranslation->original_left = $aTranslList['orig_'.$this->iLangsel_left][$sIdent];
                     $oTranslation->original_right = $aTranslList['orig_'.$this->iLangsel_right][$sIdent];
+                    $oTranslation->oxadmin = $aTranslList['OXADMIN'][$sIdent];
                     $aTranslations[$sIdent] = $oTranslation;
                 }
             }

@@ -35,7 +35,7 @@ $aLang = array(
     'D3_MULTILANG_CHOOSELANGFIRST'              => 'Bitte wählen Sie zuerst die beiden Sprachen.',
     'D3_MULTILANG_SEARCHDESC'                   => 'Suche in den gewählten Sprachen<br>und den Idents:',
     'D3_MULTILANG_SEARCHSTART'                  => 'Suche starten',
-    'D3_MULTILANG_SEARCHEMPTYSTART'             => 'suche leere Einträge',
+    'D3_MULTILANG_SEARCHEMPTYSTART'             => 'suche leere oder nicht gesetzte Einträge',
     'D3_MULTILANG_SEARCHIDENTICALSTART'         => 'suche identische Einträge',
     'D3_MULTILANG_SEARCHORIGINALSTART'          => 'suche originale Einträge',
     'D3_MULTILANG_SEARCHALL'                    => 'alle Einträge anzeigen',
@@ -65,6 +65,7 @@ $aLang = array(
     'D3_MULTILANG_SUCC_OXID'                    => '%d Einträge aus Oxid-Datei importiert. Bitte leeren Sie das TMP-Verzeichnis.',
     'D3_MULTILANG_ERR_OXID_MIME'                => '%d Einträge aus Oxid-Datei importiert. Dateiformat kann nicht geprüft werden.',
     'D3_MULTILANG_SUCC_INSTALLED'               => '%d Einträge aus installierten Dateien importiert. Bitte leeren Sie das TMP-Verzeichnis.',
+    'D3_MULTILANG_NOT_SUCC'                     => 'Falsches Dateiformat, Import abgebrochen. Bitte prüfen Sie die Datei.',
     'D3_MULTILANG_SUCCEXP'                      => 'exportiert nach: %s',
     'D3_MULTILANG_DEMOEXP'                      => 'Im Demomodus des Moduls steht der Export leider nicht zur Verfügung.',
     'D3_MULTILANG_MODCFG_SAVEMISS'              => 'fehlende Sprachbausteine werden automatisch angelegt',
@@ -79,12 +80,10 @@ $aLang = array(
     'D3_MULTILANG_NEWFIELDERROR'                => 'Die markierten Einträge konnten nicht eingefügt werden, da der Ident schon verwendet wird.',
     'D3_MULTILANG_SUCC_COUNT'                   => ' Einträge - ',
 
-    'D3_MULTILANG_XLS_CREATOR'                  => 'D³ Übersetzungsassistent Modul für Oxid eShop',
-    'D3_MULTILANG_XLS_TITLE'                    => 'Übersetzungen',
-    'D3_MULTILANG_XLS_LOCALEERR'                => 'Kann Spracheinstellungen "%s" nicht setzen - Einstellung ist "en_us"',
-    'D3_MULTILANG_XLS_LANG'                     => 'Sprache',
+    'D3_MULTILANG_ISBACKEND'                    => 'ist Backendeintrag',
+    'D3_MULTILANG_ISORIGINAL'                   => 'ist Original OXID',
 
-    'D3_MULTILANG_CLEARTMP_IMPORT'              => '<img src="../modules/d3/modcfg/public/d3logo.php" alt="D³" title="D³ Data Development"> <b>Übersetzungsassistent</b>: Sprachbausteine vorher importieren',
+    'D3_MULTILANG_CLEARTMP_IMPORT'              => '<img src="https://logos.oxidmodule.com/d3logo.svg" alt="(D3)" style="height:1em;width:1em"> <b>Übersetzungsassistent</b>: Sprachbausteine vorher importieren',
 
     'D3_MULTILANG_INSTALL_EXECIMPORT'           => 'Vor der Verwendung des Moduls ist es erforderlich, die verwendeten Sprachbausteine zu importieren. Lassen Sie dies im Installationsprozess automatisch durchführen oder starten Sie den Import vor der Modulaktivierung im Adminbereich Ihres Shops.',
     'D3_MULTILANG_INSTALL_IMPORTSUCC'           => '%i Sprachbausteine aus vorhandenen Dateien importiert',

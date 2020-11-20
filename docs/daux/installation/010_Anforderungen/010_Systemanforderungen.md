@@ -3,7 +3,7 @@ title: Systemanforderungen
 ---
 
 * PHP Version
-    * 5.6.x bis 7.2.x
+    * 5.6.x bis 7.4.x
 * PHP Decoder
     * installierter ionCube Loader
 * Shopversionen / -editionen
@@ -11,9 +11,12 @@ title: Systemanforderungen
         * 6.0.2
         * 6.0.3
         * 6.1.x
-* D3 Modul-Connector ([kostenfrei bei D3 erhältlich](https://www.oxidmodule.com/connector/)) ab Version 5.1.1.4 
+        * 6.2.x
+* Themes
+    * Dieses Modul hat keine Frontendanpassungen
+* D3 Modul-Connector ([kostenfrei bei D3 erhältlich](https://www.oxidmodule.com/connector/)) ab Version 5.3.4.1 
 * Installation via [Composer](https://getcomposer.org)
 
-Beachten Sie, dass die Ihnen vorliegende Modulversion entsprechend für **PHP 5.6**, **PHP 7.0**, **PHP 7.1** oder **PHP 7.2** sowie dem auf Ihrem Server vorhandenen Decoder (**ionCube Loader**) kompatibel ist. Im Zweifelsfall kontaktieren Sie uns und nennen den für Ihren Shop genutzten Decoder und die PHP-Version.
+Beachten Sie, dass die Ihnen vorliegende Modulversion entsprechend für **PHP 5.6**, **PHP 7.0**, **PHP 7.1**, **PHP 7.2**, **PHP 7.3** oder **PHP 7.4** sowie dem auf Ihrem Server vorhandenen Decoder (**ionCube Loader**) kompatibel ist. Im Zweifelsfall kontaktieren Sie uns und nennen den für Ihren Shop genutzten Decoder und die PHP-Version.
 
-Kontrollieren Sie bitte auch, ob diese Modulversion für die von Ihnen eingesetzte Shopedition (Professional Edition (PE) oder Enterprise Edition (EE)) ausgelegt ist. 
+Kontrollieren Sie bitte auch, ob diese Modulversion für die von Ihnen eingesetzte Shopedition ausgelegt ist. 
