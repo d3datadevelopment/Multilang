@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  * This Software is the property of Data Development and is protected
@@ -41,14 +41,14 @@ class d3multilang_update extends d3install_updatebase
 {
     public $sModKey = 'd3_multilang';
     public $sModName = 'Übersetzungsassistent';
-    public $sModVersion = '4.1.0.0';
-    public $sModRevision = '4100';
-    public $sBaseConf = 'VZhv2==UHJ6ejdSZFRRTWlGVUZFVHBSWEI0QmFMaDFUTWNnd2o4RmdpWnl1V2h4aEJjVWorT1dmNnVIO
-U5BMDU5ZWVNK2xucDdmbjNjN3ZIRlFGS0IwOUJqL29Nd2VFK1hsVHl5ajlQNVpKRHppKzEwVlpDcEptZ
-XdHaGlIQ0xmOWFhUWc2Sm12QWR2NXdoL0ZDcTVlNHhRM3dHMFNHNFJyK3VRSXVJOHlEU3p2cEpnY2hSS
-DlWSkxhWXNwbHVNMWFvQ1JIekxGSkl1R29iekZ2MkFTeThSdEFlSW1zQXFXQk5wdFpWZHF3OVVtaWJaV
-3Bpb21BQitzRmJPZzZaTzA4allYczZEZkdIM0lZT243QkpxZ2Q3ZVhJSmtCYi9GY1pRTFF6bDArc0pIR
-ndRK1haazRQdzFtbml1cVBJSTEwRklZVnZGbEJiNjF5WHN5b3FzalZ3bXIvNDRBPT0=';
+    public $sModVersion = '4.1.0.1';
+    public $sModRevision = '4101';
+    public $sBaseConf = 'DJ2v2==eE9kRzU4bHAyUHZzY01LbjhPTEpoT0R6UVQxREhRZFBxRjBBY3V0Ty8xa1JmM3RFeW96aDBKN
+TZFTkYrS1hGd2M3Smt5OWUxaWZSSXVUMG5wdXA1OGdZOWxyUHRVWHNsU0VUNEljdk1XVGp5R1NxbU82Z
+W0xMTlieG9DZndBeDFGSXoxRDd4ZUMyeUFnSnFib0E2T3JGRUVHcis3TWNCd09uUm5SNUlLLzNneDVma
+HE4Q0pHUWNBa3djMUFZVitHc0ZBZjVTb2w3MkxRWFgrM0loSEI5aWt2bS9ibnRSQjFvK1hrYTlhNjBpW
+kNKN3FRYURBbTlnWjBTS2xwVDFRT2ZsOUJQZ216dGtaK2phQVRQM0Q0RWxic1hIcnZ5d2JZN2tPUmxSa
+jgxenVpanJoQzRCZVJDNEtuNFFCaW1DTEJFRGwwREhNQXk1NmU5dGdHZTErUFB3PT0=';
     public $sRequirements = '';
     public $sBaseValue = 'TyUzQTglM0ElMjJzdGRDbGFzcyUyMiUzQTQlM0ElN0JzJTNBMjglM0ElMjJkM19jZmdfbW9kX19hTGljZW5zZUluZm9NYWlsJTIyJTNCYSUzQTIlM0ElN0JzJTNBNDglM0ElMjJVTktOT1dOQ09ORktFWV9fNDc5MzYzODcwMmI2NzcxNWYxZGZiZmM4MzI0NjY5MTQlMjIlM0JzJTNBMTklM0ElMjIyMDEzLTEwLTE3JTIwMDklM0EzOSUzQTUyJTIyJTNCcyUzQTQyJTNBJTIyTk9MSUNLRVlfXzQ3OTM2Mzg3MDJiNjc3MTVmMWRmYmZjODMyNDY2OTE0JTIyJTNCcyUzQTE5JTNBJTIyMjAxMy0xMC0xNyUyMDA5JTNBNDElM0EyNyUyMiUzQiU3RHMlM0EzOCUzQSUyMmQzX2NmZ19tb2RfX2JsTXVsdGlsYW5nX091dHB1dE1pbWVUeXBlJTIyJTNCcyUzQTElM0ElMjIxJTIyJTNCcyUzQTMyJTNBJTIyZDNfY2ZnX21vZF9fc011bHRpbGFuZ19TZXBhcmF0b3IlMjIlM0JzJTNBMSUzQSUyMiU3QyUyMiUzQnMlM0E0MCUzQSUyMmQzX2NmZ19tb2RfX2JsTXVsdGlsYW5nX1NhdmVNaXNzaW5nSXRlbXMlMjIlM0JzJTNBMSUzQSUyMjElMjIlM0IlN0Q=';
 
@@ -246,16 +246,12 @@ ndRK1haazRQdzFtbml1cVBJSTEwRklZVnZGbEJiNjF5WHN5b3FzalZ3bXIvNDRBPT0=';
 
         if ($this->checkOxidField()) {
             $dbIndex = oxNew(d3installdbindizes::class, $this);
-            $dbIndex->dropTableIndex($tableName, 'PRIMARY');
-            $dbIndex->addTableIndex2([
-                'sTableName' => $tableName,
-                'sType'      => d3database::INDEX_TYPE_UNIQUE,
-                'sName'      => 'ADMINIDENT',
-                'aFields'    => [
-                    'OXID'   => 'OXID',
-                    'OXADMIN'   => 'OXADMIN'
-                ]
-            ]);
+            if ($dbIndex->exist($tableName, 'PRIMARY')) {
+                $dbIndex->dropTableIndex($tableName, 'PRIMARY');
+            }
+            if ($dbIndex->exist($tableName, 'ADMINIDENT')) {
+                $dbIndex->dropTableIndex($tableName, 'ADMINIDENT');
+            }
 
             $dbField = oxNew(d3installdbfield::class, $this);
             $dbField->fixRenameField2($tableName, 'OXID', 'OXIDENT');
@@ -267,14 +263,6 @@ ndRK1haazRQdzFtbml1cVBJSTEwRklZVnZGbEJiNjF5WHN5b3FzalZ3bXIvNDRBPT0=';
 
             $dbCommon = oxNew(d3installdbcommon::class, $this);
             $dbCommon->executeMultipleQueries($queries);
-
-            $dbIndex->addTableIndex2([
-                'sTableName' => $tableName,
-                'sType'      => d3database::INDEX_TYPE_PRIMARY,
-                'aFields'    => [
-                    'OXID'   => 'OXID'
-                ]
-            ]);
 
             if ($this->hasExecute()) {
                 $this->setRequiredViewUpdate('d3_translations');

@@ -2,6 +2,19 @@
 title: Changelog
 ---
 
+## 4.1.0.1 - 2020-12-08
+
+### Added
+- installierbar in OXID 6.2.3
+
+### Changed
+- Setup verarbeitet auch unvollständig abgeschlossene Zwischenschritte des Updates auf 4.1
+
+### Fixed
+- fehlerhafte Kodierung der Setup-Datei korrigiert
+
+---
+
 ## 4.1.0.0 - 2020-11-20
 
 ### Added
