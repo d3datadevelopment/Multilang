@@ -2,6 +2,19 @@
 title: Changelog
 ---
 
+## 4.1.0.2 - 2021-01-07
+
+### Changed
+- Zähler zeiggt nur aktualisierte / neu installierte Einträge
+- Neueinträge werden standardmäßig auf "OXID Original" gesetzt, um Aktualisierungsblockade zu vermeiden
+- Standardkonfiguration "fehlende Einträge ergänzen" entfernt
+
+### Fixed
+- Datenbankabfragen korrigiert
+- Fehler beim Ändern bestehender Einträge mit nur einer Sprachauswahl korrigiert
+
+---
+
 ## 4.1.0.1 - 2020-12-08
 
 ### Added
