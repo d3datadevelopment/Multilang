@@ -1,0 +1,6 @@
+Diese Modulversion stellt folgende Funktionen zur Verfügung:
+
+- datenbankbasierte Textbausteinverwaltung
+- Pflege komfortabel über Adminbereich des Shops
+- Export in CSV- und Oxid-Format
+- Einbindung über Modul-Erweiterung
