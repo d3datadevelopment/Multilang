@@ -2,10 +2,19 @@
 title: Changelog
 ---
 
-## 4.1.0.2 - 2021-01-07
+## 4.1.0.3 - 2024-07-02
 
 ### Changed
-- Zähler zeiggt nur aktualisierte / neu installierte Einträge
+
+### Fixed
+- UTF-8 für Umlaute im Ident
+
+--
+ 
+- ## 4.1.0.2 - 2021-01-07
+
+### Changed
+- Zähler zeigt nur aktualisierte / neu installierte Einträge
 - Neueinträge werden standardmäßig auf "OXID Original" gesetzt, um Aktualisierungsblockade zu vermeiden
 - Standardkonfiguration "fehlende Einträge ergänzen" entfernt
 

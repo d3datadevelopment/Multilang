@@ -21,7 +21,7 @@ $sLangName  = 'Deutsch';
 $aLang = array(
     'charset'                                   => 'UTF-8',
 
-    'd3mxmultilang'                             => '<i class=\'fa fa-comments\'></i> Übersetzungsassistent',
+    'd3mxmultilang'                             => "<i class='fa fa-fw fa-comments'></i> Übersetzungsassistent",
     'd3mxmultilang_settings'                    => 'Einstellungen',
     'd3tbclmultilang_translations'              => 'Übersetzungen',
     'd3tbclmultilang_imex'                      => 'Import / Export',
@@ -86,7 +86,7 @@ $aLang = array(
     'D3_MULTILANG_CLEARTMP_IMPORT'              => '<img src="https://logos.oxidmodule.com/d3logo.svg" alt="(D3)" style="height:1em;width:1em"> <b>Übersetzungsassistent</b>: Sprachbausteine vorher importieren',
 
     'D3_MULTILANG_INSTALL_EXECIMPORT'           => 'Vor der Verwendung des Moduls ist es erforderlich, die verwendeten Sprachbausteine zu importieren. Lassen Sie dies im Installationsprozess automatisch durchführen oder starten Sie den Import vor der Modulaktivierung im Adminbereich Ihres Shops.',
-    'D3_MULTILANG_INSTALL_IMPORTSUCC'           => '%i Sprachbausteine aus vorhandenen Dateien importiert',
+    'D3_MULTILANG_INSTALL_IMPORTSUCC'           => '%d Sprachbausteine aus vorhandenen Dateien importiert',
     'D3_MULTILANG_INSTALL_NOCSCOLLATION'        => 'Die Datenbank stellt keine case-sensitive Kollation für das Feld %1$s der Tabelle %2$s bereit. Bitte stellen Sie eine passende Kollation bereit und passen das Datenbankfeld darauf hin an. Bis dahin können keine gleichnamigen Idents mit unterschiedlicher Groß- und Kleinschreibung verwendet werden.',
 
     'D3_MULTILANG_EXC_NOIMPORTFILE'             => 'Es wurde keine Importdatei aufgeladen.'

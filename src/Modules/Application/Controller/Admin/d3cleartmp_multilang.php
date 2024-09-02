@@ -47,6 +47,10 @@ class d3cleartmp_multilang extends d3cleartmp_multilang_parent
         return d3_cfg_mod::get($this->_d3GetMultiLangModId());
     }
 
+    /**
+     * @throws DatabaseErrorException
+     * @throws DatabaseConnectionException
+     */
     public function clearTmp()
     {
         $blReturn = false;

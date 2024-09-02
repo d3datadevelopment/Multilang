@@ -36,10 +36,10 @@ $aModule = [
         'en' => '',
     ],
     'thumbnail'   => 'picture.png',
-    'version'     => '4.1.0.2',
+    'version'     => '4.1.0.3',
     'author'      => 'D&sup3; Data Development (Inh.: Thomas Dartsch)',
     'email'       => 'support@shopmodule.com',
-    'url'         => 'http://www.oxidmodule.com/',
+    'url'         => 'https://www.oxidmodule.com/',
     'extend'      => [
         Language::class     => D3\Multilang\Modules\Core\d3_oxlang_multilang::class,
         d3cleartmp::class   => D3\Multilang\Modules\Application\Controller\Admin\d3cleartmp_multilang::class,

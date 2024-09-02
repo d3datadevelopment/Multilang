@@ -21,7 +21,7 @@ $sLangName  = 'Deutsch';
 $aLang = array(
     'charset'                                   => 'UTF-8',
 
-    'd3mxmultilang'                             => '<i class=\'fa fa-comments\'></i> Translation Wizzard',
+    'd3mxmultilang'                             => "<i class='fa fa-fw fa-comments'></i> Translation Wizzard",
     'd3mxmultilang_settings'                    => 'Settings',
     'd3tbclmultilang_translations'              => 'Translations',
     'd3tbclmultilang_imex'                      => 'Import / Export',
@@ -86,7 +86,7 @@ $aLang = array(
     'D3_MULTILANG_CLEARTMP_IMPORT'              => '<img src="https://logos.oxidmodule.com/d3logo.svg" alt="(D3)" style="height:1em;width:1em"> <b>Translation Wizzard</b>: import text items first',
 
     'D3_MULTILANG_INSTALL_EXECIMPORT'           => 'Before using the module, it is necessary to import the used test items. Have this done automatically in the installation process or start the import before activating the module in the admin area of your shop.',
-    'D3_MULTILANG_INSTALL_IMPORTSUCC'           => '%i text items imported from existing files',
+    'D3_MULTILANG_INSTALL_IMPORTSUCC'           => '%d text items imported from existing files',
     'D3_MULTILANG_INSTALL_NOCSCOLLATION'        => 'The database does not provide a case-sensitive collation for the %1$s field of the %2$s table. Please provide a suitable collation and adjust the database field accordingly. Until then, you can not use identically named identifiers with different capitalization.',
 
     'D3_MULTILANG_EXC_NOIMPORTFILE'             => 'No import file was loaded.'
