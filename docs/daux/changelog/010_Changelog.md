@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://git.d3data.de/D3Private/Multilang/compare/5.0.0.0...rel_5.x)
 
+## [5.1.0.0](https://git.d3data.de/D3Private/Multilang/compare/5.0.0.1...5.1.0.0) - 2025-04-29
+### added
+- verwendbar mit Twig
+- installierbar in OXID 7.2.x
+
+## [5.0.0.1](https://git.d3data.de/D3Private/Multilang/compare/4.1.0.2...5.0.0.0) - 2024-07-02
+### Fixed
+- UTF-8 für Umlaute im Ident
 
 ## [5.0.0.0](https://git.d3data.de/D3Private/Multilang/compare/4.1.0.2...5.0.0.0) - 2024-01-23
 ### added
