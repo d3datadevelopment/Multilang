@@ -28,10 +28,10 @@
   ],
   "require": {
     "php": "^8.0",
-    "ext-sourceguardian": ">=14",
+    "ext-sourceguardian": ">=16",
     "ext-pdo": "*",
     "oxid-esales/oxideshop-ce": "7.0 - 7.2",
-    "d3/modcfg": "^7.0"
+    "d3/modcfg": "^7.4"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "~3.13.0",

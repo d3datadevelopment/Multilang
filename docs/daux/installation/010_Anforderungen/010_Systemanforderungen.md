@@ -23,7 +23,7 @@ title: Systemanforderungen
     * Twig-Templates
       * apex
       * admin
-* D3 Modul-Connector ([kostenfrei bei D3 erhältlich](https://www.oxidmodule.com/connector/)) ab Version 7.0.0.0 
+* D3 Modul-Connector ([kostenfrei bei D3 erhältlich](https://www.oxidmodule.com/connector/)) ab Version 7.3.0.0 
 * Installation via [Composer](https://getcomposer.org)
 
 Beachten Sie, dass die Ihnen vorliegende Modulversion entsprechend für Ihre genutzte PHP-Version sowie dem auf Ihrem Server vorhandenen Decoder kompatibel ist. Im Zweifelsfall kontaktieren Sie uns und nennen den für Ihren Shop genutzten Decoder und die PHP-Version.
